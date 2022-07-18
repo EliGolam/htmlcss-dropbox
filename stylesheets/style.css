@@ -5,8 +5,9 @@
     --clr-primary: rgb(236, 46, 103);
     --clr-secondary: rgb(66, 228, 179);
 
-    --clr-neutral-white: rgba(246, 242, 233, 1);
-    --clr-neutral-black: rgba(25, 25, 25, 1);
+    --clr-neutral-white: rgb(248, 252, 252);
+    --clr-neutral-black:rgba(25, 25, 25, 1); 
+    --clr-neutral-black-transparent: rgba(25, 25, 25, .3);
     --clr-neutral-grey: rgba(88, 89, 90, 1);
 
     --fontfamily-primary: 'Roboto', Arial, Helvetica, sans-serif;
@@ -30,9 +31,24 @@
 
 /* COMPOSITION: Macrolevel design choises that defines the skeleton of the webpage and basic composition within components */
 /* Page Layout choices */
+body { font:  var(--fontweight-normal) var(--fontsize-normal) var(--fontfamily-primary); }
 
+body > * { padding: var(--general-gap); }
+
+.page-header {
+    position: fixed;
+        top: 0;
+        z-index: 5;
+    width: 100%;
+    box-shadow: 0 1px 3px 1px var(--clr-neutral-black-transparent);
+
+}
 
 /* Component Layout choices */
+.top-navigation-bar {
+    justify-content: space-between;
+    align-items: center;
+}
 
 /* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
 .icon::before, 
@@ -48,6 +64,16 @@
 .social-links > .icon::after {
     font: var(--fa-font-brands);
 }
+
+.hidden-content { display: none; }
+
+.content-width { max-width: var(--content-width); margin: 0 auto;}
+
+.flow > * { margin-top: 2.5rem; }
+
+.flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
 
 /* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
 .background-light { background-color: var(--clr-neutral-white); }

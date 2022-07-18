@@ -4,3 +4,7 @@
 
 - Added basic HTML boilerplate and CSS reset
 - Added the assets of the project 
+
+## V 0.2
+
+- Added **'page-header'** structure and general layout styling

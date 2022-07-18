@@ -3,9 +3,9 @@
 
 <!-- METADATA -->
 <head>
-    <title>Document</title>
+    <title>Dropbox.com</title>
     <!-- Icon -->
-    <link rel="icon" href="">
+    <link rel="icon" href="./assets/img/Dropbox_Icon.svg">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,8 +29,33 @@
 Order: Main BLOCK Class  other BLOCK Classes   Utility/Design Classes  
 Logical choice to make things look more organized, but they are not fundamental -->
 <body>
-    <header>
-        <h1>TITLE</h1>
+    <!-- Fixed HEADER with 2 components. Dropbox Logo + unordered list and unordered list + call to action buttons  -->
+    <header class="page-header   background-light text-colour-dark">
+        <h1 class="hidden-content">Dropbox</h1>
+
+        <nav class="top-navigation-bar   flex">
+            <h2 class="hidden-content">Top Navigation Bar</h2>
+
+            <div class="flex">
+                <a href="https://www.dropbox.com/" class="Dropbox Logo" target="_blank"><img src="./assets/img/logo-small.png" alt="Dropbox Logo"></a>
+                
+                <ul class="navigate-section flex">
+                    <li class="navigate-item"><a href="#">Perchè Dropbox</a></li>
+                    <li class="navigate-item"><a href="#">Funzioni</a></li>
+                    <li class="navigate-item"><a href="#">Piani e Prezzi</a></li>
+                </ul>
+            </div>
+
+            <div class="flex">
+                <ul class="navigate-section flex">
+                    <li class="navigate-item"><a href="#">Supporto</a></li>
+                    <li class="navigate-item"><a href="#">Contatta l'ufficio vendite</a></li>
+                </ul>
+
+                <button class="login ui-button">Accedi</button>
+                <button class="start ui-button">Inizia</button>
+            </div>
+        </nav>
     </header>
 
     <main>
