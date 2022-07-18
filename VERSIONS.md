@@ -12,3 +12,9 @@
 ## V 0.3
 
 - Added Main-header and Business-plan section
+
+## V 0.4
+
+- Added business-partner section
+- Added business-features
+- Added business-clients
