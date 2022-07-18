@@ -18,3 +18,9 @@
 - Added business-partner section
 - Added business-features
 - Added business-clients
+
+## V 0.5
+
+- Added business-call-to-action
+- Added FAQ
+- Added Footer

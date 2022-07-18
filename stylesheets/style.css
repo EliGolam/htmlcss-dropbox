@@ -26,7 +26,7 @@
     --gap: 1rem;
     --flow-spacer: 1rem;
     --content-width: 1100px;
-    --general-gap: 1rem;
+    --general-gap: .8rem;
 }
 
 /* COMPOSITION: Macrolevel design choises that defines the skeleton of the webpage and basic composition within components */
@@ -43,6 +43,8 @@ body { font:  var(--fontweight-normal) var(--fontsize-normal) var(--fontfamily-p
 }
 
 main > * { padding: 5rem}
+
+footer { padding: 3rem 1rem; }
 
 /* Component Layout choices */
 .top-navigation-bar {
@@ -78,6 +80,7 @@ main > * { padding: 5rem}
 /* Card-container */
 .card-container {
     gap: var(--general-gap);
+    justify-content: space-between;
 }
 
 .card-container > .flex {
@@ -104,10 +107,7 @@ main > * { padding: 5rem}
 
 /* BLOCKS: component specific rules */
 /* Main-header */
-.main__header > * {
-    max-width: calc(var(--content-width) + 3rem);
-    margin: 0 auto;
-}
+.main__header > * { max-width: var(--content-width); margin: 0 auto; }
 
 .main__header__title{
     text-align: center;
@@ -117,8 +117,7 @@ main > * { padding: 5rem}
     max-width: 65%;
 }
 
-
-
+/* Business-plan */
 .business-plan .card-item { 
     border: 2px solid var(--clr-neutral-black);
 }
@@ -132,6 +131,50 @@ main > * { padding: 5rem}
 .business-features .card-item {
     width: calc(100% / 3 - var(--general-gap));
 }
+
+/* Business-clients */
+.business-clients {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.client-container {
+    align-items: stretch;
+}
+
+.client-section {
+    width: calc(100% / 3);
+    aspect-ratio: 1 / 1;
+}
+
+.client-item {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.client-item > img {
+    width: 60%;
+}
+
+.side-section > .client-item {
+    width: calc(100% / 2);
+}
+
+/* Business-call-to-action */
+.business-call-to-action > .flex {
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5rem;
+}
+
+/* FOOTER */
+.page-footer > * { max-width: calc(var(--content-width) + 8rem); margin: 0 auto; }
+
 /* EXCEPTIONS: variations to a block */
 
 /* MEDIA QUERIES */
