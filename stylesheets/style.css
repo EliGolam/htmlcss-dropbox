@@ -2,7 +2,7 @@
 /* These are some generic design choices for colour schemes, fonts and backgrounds */
 :root {
     /* Website Color Scheme */
-    --clr-primary: rgb(236, 46, 103);
+    --clr-primary: rgb(162, 218, 255);
     --clr-secondary: rgb(66, 228, 179);
 
     --clr-neutral-white: rgb(248, 252, 252);
@@ -24,8 +24,8 @@
     --fontsize-title: 3rem;
 
     --gap: 1rem;
-    --flow-spacer: 1em;
-    --content-width: 900px;
+    --flow-spacer: 1rem;
+    --content-width: 1100px;
     --general-gap: 1rem;
 }
 
@@ -33,16 +33,16 @@
 /* Page Layout choices */
 body { font:  var(--fontweight-normal) var(--fontsize-normal) var(--fontfamily-primary); }
 
-body > * { padding: var(--general-gap); }
-
 .page-header {
     position: fixed;
         top: 0;
         z-index: 5;
     width: 100%;
+    padding: 1rem;
     box-shadow: 0 1px 3px 1px var(--clr-neutral-black-transparent);
-
 }
+
+main > * { padding: 5rem}
 
 /* Component Layout choices */
 .top-navigation-bar {
@@ -69,7 +69,7 @@ body > * { padding: var(--general-gap); }
 
 .content-width { max-width: var(--content-width); margin: 0 auto;}
 
-.flow > * { margin-top: 2.5rem; }
+.flow > *:not(:first-child) { margin-top: var(--flow-spacer); }
 
 .flex { display: flex; }
 .flex-column { flex-direction: column; }
@@ -89,7 +89,34 @@ body > * { padding: var(--general-gap); }
 .text-colour-light {color: var(--clr-neutral-white);}
 
 /* BLOCKS: component specific rules */
+/* Main-header */
+.main__header > * {
+    max-width: calc(var(--content-width) + 3rem);
+    margin: 0 auto;
+}
 
+.main__header__title{
+    text-align: center;
+}
+
+.main__header__img {
+    max-width: 65%;
+}
+
+/* Card-container */
+.card-container {
+    gap: var(--general-gap);
+}
+
+.card-container > .flex {
+    gap: var(--general-gap);
+}
+
+.card-item {
+    border: 2px solid var(--clr-neutral-black);
+    padding: 0 2rem 2rem 2rem;
+    flex-grow: 1;
+}
 /* EXCEPTIONS: variations to a block */
 
 /* MEDIA QUERIES */
