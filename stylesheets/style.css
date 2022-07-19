@@ -3,12 +3,12 @@
 :root {
     /* Website Color Scheme */
     --clr-primary: rgb(162, 218, 255);
-    --clr-secondary: rgb(66, 228, 179);
+    --clr-secondary: rgb(0, 97, 255);
 
     --clr-neutral-white: rgb(248, 252, 252);
     --clr-neutral-black:rgb(12, 12, 12); 
     --clr-neutral-black-transparent: rgba(25, 25, 25, .3);
-    --clr-neutral-grey: rgba(88, 89, 90, 1);
+    --clr-neutral-grey: rgb(242, 238, 232);
 
     --fontfamily-primary: 'Roboto', Arial, Helvetica, sans-serif;
     --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
@@ -38,7 +38,7 @@ body { font:  var(--fontweight-normal) var(--fontsize-normal) var(--fontfamily-p
         top: 0;
         z-index: 5;
     width: 100%;
-    padding: 1rem;
+    padding: .2rem var(--general-gap);
     box-shadow: 0 1px 3px 1px var(--clr-neutral-black-transparent);
 }
 
@@ -65,6 +65,21 @@ footer { padding: 3rem 1rem; }
 .social-links > .icon::before,
 .social-links > .icon::after {
     font: var(--fa-font-brands);
+}
+
+.ui-button {
+    padding: .4rem 1.3rem;
+    border: transparent;
+    font-weight: var(--fontweight-normal);
+    cursor: pointer;
+
+    transition: transform 200ms ease-in, border-radius 200ms, opacity 100ms;
+}
+
+.ui-button:hover {
+    transform: scale(1.15);
+    border-radius: 6px;
+    opacity: .8;
 }
 
 .hidden-content { display: none; }
@@ -105,6 +120,35 @@ footer { padding: 3rem 1rem; }
 .text-colour-light {color: var(--clr-neutral-white);}
 
 /* BLOCKS: component specific rules */
+/* Page-Header */
+.page-header {
+    font-weight: var(--fontweight-thin);
+}
+
+.page-header > .flex,
+.page-header > .flex > .flex,
+.page-header .navigate-section {
+    justify-content: space-between;
+    align-items: center;
+
+    column-gap: .5rem;
+}
+
+.page-header .navigate-item { 
+    padding: 1.5rem 1rem; 
+    transition: background-color 200ms ease-in;
+}
+
+.page-header .navigate-item:hover {
+    background-color: var(--clr-neutral-grey);
+}
+
+.page-header a:hover {
+    text-decoration: underline;
+    text-underline-offset: .5rem;
+}
+
+
 /* Main-header */
 .main__header > * { max-width: var(--content-width); margin: 0 auto; }
 

@@ -28,3 +28,7 @@
 ## V 0.6
 
 - Fixed card-item padding issues
+
+## V 0.9.1
+
+- Added page-header CSS styling
