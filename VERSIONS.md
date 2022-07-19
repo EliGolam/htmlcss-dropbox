@@ -42,3 +42,9 @@
 - Styling of the main__header completed  
 - Added functional scroll-down button  
 - Positioned wrapper in a way that it exists the header, to create an overhang effect
+
+## V 0.9.4
+
+- Fixed Flow error  
+- Added padding where necessary  
+- Finished layout of business-plan  

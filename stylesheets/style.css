@@ -10,23 +10,26 @@
     --clr-neutral-black-transparent: rgba(25, 25, 25, .3);
     --clr-neutral-grey: rgb(242, 238, 232);
 
-    --fontfamily-primary: 'Merriweather Sans', Arial, Helvetica, sans-serif;
+    --fontfamily-primary: 'Noto Sans', Arial, Helvetica, sans-serif;
     --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
     --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
 
-    --fontweight-thin: 300;
+    --fontweight-thin: 200;
     --fontweight-normal: 400;
-    --fontweight-heavy: 800;
+    --fontweight-heavy: 700;
 
-    --fontsize-small: 0.7rem;
-    --fontsize-normal: 1rem;
+    --fontsize-small: .7rem;
+    --fontsize-normal: .9rem;
+    --fontsize-heading: 1.5rem;
     --fontsize-large: 2rem;
     --fontsize-title: 4.5rem;
 
-    --gap: 1rem;
-    --flow-spacer: 1rem;
-    --content-width: 1100px;
-    --general-gap: .8rem;
+    --gap: .8rem;
+    --flow-space: 1.5rem;
+    --gap-large: 3rem;
+    --flow-space-extra: 3rem;
+
+    --content-width: 1300px;
 
     --scroll-padding: 100px;
 }
@@ -45,7 +48,7 @@ body { font:  var(--fontweight-normal) var(--fontsize-normal) var(--fontfamily-p
         top: 0;
         z-index: 5;
     width: 100%;
-    padding: .2rem var(--general-gap);
+    padding: .2rem var(--gap, 1rem);
     box-shadow: 0 1px 3px 1px var(--clr-neutral-black-transparent);
 }
 
@@ -54,9 +57,9 @@ body { font:  var(--fontweight-normal) var(--fontsize-normal) var(--fontfamily-p
     align-items: center;
 }
 
-main > * { padding: 3rem}
+main > * { padding: var(--gap-large, 20px)}
 
-footer { padding: 3rem 1rem; }
+footer { padding: var(--gap-large, 20px) var(--gap, 1rem); }
 
 /* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
 .icon::before, 
@@ -66,6 +69,8 @@ footer { padding: 3rem 1rem; }
     -webkit-font-smoothing: antialiased;  
 
     font: var(--fa-font-solid);
+
+    margin-right: .5rem;
 }
 
 .social-links > .icon::before,
@@ -102,14 +107,16 @@ footer { padding: 3rem 1rem; }
 
 a:hover {
     text-decoration: underline;
-    text-underline-offset: .5rem;
 }
+
+h2 { font-size: var(--fontsize-large); font-weight: var(--fontweight-heavy);}
 
 .hidden-content { display: none; }
 
 .content-width { max-width: var(--content-width); margin: 0 auto;}
 
-.flow > *:not(:first-child) { margin-top: var(--flow-spacer); }
+.flow > * { margin-bottom: var(--flow-space); margin-top: var(--flow-space); }
+.flow-extra > * { margin-bottom: var(--flow-space-extra); margin-top: var(--flow-space-extra);}
 
 .flex { display: flex; }
 .flex-column { flex-direction: column; }
@@ -117,10 +124,10 @@ a:hover {
 
 /* Card-container */
 .card-container {
-    gap: var(--general-gap);
+    gap: var(--gap);
     justify-content: space-between;
 }
-.card-container > .flex { gap: var(--general-gap); }
+.card-container > .flex { gap: var(--gap); }
 .card-item { flex-grow: 1; }
 
 /* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
@@ -136,14 +143,15 @@ a:hover {
 
 .text-colour-light {color: var(--clr-neutral-white);}
 
+.text-colour-secondary {color: var(--clr-secondary);}
+
 /* BLOCKS: component specific rules */
 /* Page-Header */
 .page-header {
     font-weight: var(--fontweight-thin);
 }
 
-.page-header > .flex,
-.page-header > .flex > .flex,
+.page-header .flex,
 .page-header .navigate-section {
     justify-content: space-between;
     align-items: center;
@@ -152,24 +160,19 @@ a:hover {
 }
 
 /* Main__header */
-.main__header { position: relative; }
-
 .main__header > .wrapper {
     position: relative;
-        bottom: -130px;
+        bottom: -100px;
 }
 
 .main__header__title{
     font-size: var(--fontsize-title);
     font-weight: var(--fontweight-heavy);
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--gap-large, 2.5rem);
 }
 
-.main__header .flex {
-    position: relative;
-        right: -3rem;
-}
+.main__header__info { font-weight: var(--fontweight-thin, 200);}
 
 .start-call-to-action { margin: 2rem 0;}
 
@@ -181,33 +184,85 @@ a:hover {
     transition: transform 150ms ease-in, color 100ms ease-in;
 }
 
-.scroll-down:hover::before { transform: scale(1.2); color: var(--clr-neutral-white);}
+.scroll-down:hover::before { 
+    transform: scale(1.2); 
+    color: var(--clr-neutral-white);
+}
 
 .main__header__img { max-width: 65%; }
 
+
 /* Business-plan */
-#business-plan {
-    margin-top: 7rem;
+#business-plan { margin-top: 7rem; }
+
+#business-plan h2 { margin-bottom: var(--gap-large, 50px); }
+
+#business-plan label { margin-right: var(--gap-large, 50px); }
+
+.business-plan__options > .card-item {
+    width: calc(100% / 3);
 }
 
 #business-plan .card-item { 
-    border: 2px solid var(--clr-neutral-black);
+    border: 1px solid var(--clr-neutral-black);
+    margin-top: 2rem;
 }
 
-#business-plan .card-item > * {
-    padding: 0 2rem;
-} 
-
-#business-plan .card-item__type,
-#business-plan .card-item > :last-child {
-    margin-bottom: 1.5rem;
-}
-
-#business-plan .card-item__type {
-    padding: .5rem 0;
+.card-item__type {
+    margin: 0 auto;
+    padding: .6rem;
     text-align: center;
 
-    border-bottom: 2px solid var(--clr-neutral-black);
+    border-bottom: 1px solid var(--clr-neutral-black);
+}
+
+.user_single::before { content: '\f007';}
+.team-type::before { content: '\f0c0';}
+.agency-type::before { content: '\f1ad';}
+
+.card-item__content { padding-left: 2rem; padding-right: 2rem;}
+
+.card-item__header { margin-top: 2rem}
+
+.subscription-type { font-size: var(--fontsize-heading); }
+
+.price-tag {
+    font-weight: var(--fontweight-heavy, 600);
+    margin-top: 1rem;
+}
+
+.frequency {
+    font-weight: var(--fontweight-thin, 200);
+    margin-top: .5rem;
+}
+
+/* .number-of-users::before { content: '\f007';}
+.storage-space::before { content: '\f07b';}
+.functionality::before { content: '\f1e0';}  */
+
+.card-item__content .flex {
+    column-gap: .5rem;
+    align-items: baseline;
+}
+
+.card-item__call-to-action .ui-button {
+    width: 100%;
+    padding: .7rem;
+}
+
+.card-item__call-to-action a {
+    color: var(--clr-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.card-item__content hr {
+    width: 25%;
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: var(--clr-neutral-black); /* old IE */
+    background-color: var(--clr-neutral-black);  /* Modern Browsers */
 }
 
 
@@ -227,7 +282,7 @@ a:hover {
 
 /* Business-features */
 .business-features .card-item {
-    width: calc(100% / 3 - var(--general-gap));
+    width: calc(100% / 3 - var(--gap));
 }
 
 /* Business-clients */
@@ -280,7 +335,7 @@ a:hover {
 }
 
 .page-footer > .card-container > .card-item {
-    width: calc(100% / 5 - var(--general-gap));
+    width: calc(100% / 5 - var(--gap));
 }
 
 .language-selection {

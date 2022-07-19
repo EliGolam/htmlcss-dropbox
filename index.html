@@ -14,7 +14,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome v6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -63,7 +63,7 @@ Logical choice to make things look more organized, but they are not fundamental 
     <main>
         <!-- main__header -->
         <header class="main__header background-primary">
-            <div class="wrapper   content-width flow">
+            <div class="wrapper   content-width">
                 <h2 class="main__header__title">Tutto ciò che ti serve per il lavoro, in un unico posto</h2>
             
                 <div class="flex">
@@ -86,100 +86,116 @@ Logical choice to make things look more organized, but they are not fundamental 
             <h2>Trova il piano business che fa per te</h2>
 
             <form action="">
-                <input type="radio" name="payment-frequency" id="monthly-payment" value="monthly-payment">
+                <input type="radio" name="payment-frequency" id="monthly-payment" value="monthly-payment" checked>
                 <label for="monthly-payment">Fatturazione Mensile</label>
-                <input type="radio" name="payment-frequency" id="yearly-payment" value="yearly-payment" checked>
+                <input type="radio" name="payment-frequency" id="yearly-payment" value="yearly-payment">
                 <label for="yearly-payment">Fatturazione Annuale</label>
             </form>
 
             <!-- Card-container -->
             <div class="card-container   flex flex-column">
 
-                <div class="flex">
+                <div class="business-plan__options flex">
                     <!-- Card-item 1 -->
                     <section class="card-item   flow">
-                        <div class="card-item__type">Singolo</div>
+                        <div class="card-item__type user_single icon">Singolo</div>
 
-                        <header class="card-item__header">
-                            <h3 class="subscription-type">Professional</h3>
-                            <p class="price-tag"></p>
-                            <p class="frequency"></p>
-                        </header>
+                        <div class="card-item__content flow-extra">
+                            <header class="card-item__header">
+                                <h3 class="subscription-type">Professional</h3>
+                                <p class="price-tag">&euro; 12.00</p>
+                                <p class="frequency">/mese</p>
+                            </header>
 
-                        <div class="card-item__info">
-                            <p class="number-of-users"></p>
-                            <p class="storage-space"></p>
-                            <p class="functionality"></p>
+                            <div class="card-item__info flow">
+                                <div class="number-of-users flex"><i class="fa-solid fa-user"></i><p>1 utente</p></div>
+                                <div class="storage-space flex"><i class="fa-solid fa-folder"></i><p>5 TB di spazio di archiviazione sicuro</p></div>
+                                <div class="functionality flex"><i class="fa-solid fa-share-nodes"></i><p>Funzioni di produttività premium e condivisione file semplice e sicura</div>
+                            </div>
+
+                            <div class="card-item__call-to-action flow">
+                                <button class="ui-button  background-secondary text-colour-light">Prova gratis per 30 giorni</button>
+                                <p class="buy-now">oppure <a href="#">acquista ora</a></p>
+                            </div>
+
+                            <hr />
+
+                            <section class="card-item__features flow">
+                                <h4>Punti Salienti del piano</h4>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Invia file fino a 100 GB con Dropbox Transfer</p></div>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Cartelle offline su dispositivi mobili</p></div>
+                            </section>
                         </div>
-
-                        <div class="card-item__call-to-action">
-                            <button class="ui-button"></button>
-                            <p class="buy-now"></p>
-                        </div>
-
-                        <section class="card-item__features">
-                            <h4>Punti Salienti del piano</h4>
-                            <p>Invia file fino a 100 GB con Dropbox Transfer</p>
-                            <p>Cartelle offline su dispositivi mobili</p>
-                        </section>
                     </section>
                     <!-- end Card-item 1 -->
 
                     <!-- Card-item 2 -->
                     <section class="card-item   flow">
-                        <div class="card-item__type">Singolo</div>
+                        <div class="card-item__type team-type icon">Team</div>
 
-                        <header class="card-item__header">
-                            <h3 class="subscription-type">Professional</h3>
-                            <p class="price-tag"></p>
-                            <p class="frequency"></p>
-                        </header>
+                        <div class="card-item__content flow-extra">
+                            <header class="card-item__header">
+                                <h3 class="subscription-type">Advanced</h3>
+                                <p class="price-tag">&euro; 18.00</p>
+                                <p class="frequency">/utente/mese</p>
+                            </header>
 
-                        <div class="card-item__info">
-                            <p class="number-of-users"></p>
-                            <p class="storage-space"></p>
-                            <p class="functionality"></p>
+                            <div class="card-item__info flow">
+                                <div class="number-of-users flex"><i class="fa-solid fa-users"></i><p>3 o più utenti</p></div>
+                                <div class="storage-space flex"><i class="fa-solid fa-folder"></i><p>Tutto lo spazio di cui ha bisogno il tuo team</p></div>
+                                <div class="functionality flex"><i class="fa-solid fa-share-nodes"></i><p>Sofisticate funzioni di controllo e per tenere al sicuro tutti i file del tuo team.</div>
+                            </div>
+
+                            <div class="card-item__call-to-action flow">
+                                <button class="ui-button  background-secondary text-colour-light">Prova gratis per 30 giorni</button>
+                                <p class="buy-now">oppure <a href="#">acquista ora</a></p>
+                            </div>
+
+                            <hr />
+
+                            <section class="card-item__features flow">
+                                <h4>Punti Salienti del piano</h4>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Nessun limite di spazio per i file</p></div>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Cartelle offline su dispositivi mobili</p></div>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Risparmio del 50% rispetto alle iscrizioni singole</p></div>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Possibilità di inserire nuovi membri del team</p></div>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Gestione dei permessi in base ai ruoli</p></div>
+                            </section>
                         </div>
-
-                        <div class="card-item__call-to-action">
-                            <button class="ui-button"></button>
-                            <p class="buy-now"></p>
-                        </div>
-
-                        <section class="card-item__features">
-                            <h4>Punti Salienti del piano</h4>
-                            <p>Invia file fino a 100 GB con Dropbox Transfer</p>
-                            <p>Cartelle offline su dispositivi mobili</p>
-                        </section>
                     </section>
                     <!-- end Card-item 2 -->
 
                     <!-- Card-item 3 -->
                     <section class="card-item   flow">
-                        <div class="card-item__type">Singolo</div>
+                        <div class="card-item__type agency-type icon">Azienda</div>
 
-                        <header class="card-item__header">
-                            <h3 class="subscription-type">Professional</h3>
-                            <p class="price-tag"></p>
-                            <p class="frequency"></p>
-                        </header>
+                        <div class="card-item__content flow-extra">
+                            <header class="card-item__header">
+                                <h3 class="subscription-type">Enterprise</h3>
+                                <p class="price-tag">Contattaci</p>
+                                <p class="frequency">-</p>
+                            </header>
 
-                        <div class="card-item__info">
-                            <p class="number-of-users"></p>
-                            <p class="storage-space"></p>
-                            <p class="functionality"></p>
+                            <div class="card-item__info flow">
+                                <div class="number-of-users flex"><i class="fa-solid fa-user"></i><p>10 o più utenti</p></div>
+                                <div class="storage-space flex"><i class="fa-solid fa-folder"></i><p>Soluzioni personalizzabili per la tua azienda</p></div>
+                                <div class="functionality flex"><i class="fa-solid fa-share-nodes"></i><p>Assistenza personalizzata per aiutare gli amministratori in una gestione su larga scala</div>
+                            </div>
+
+                            <div class="card-item__call-to-action flow">
+                                <button class="ui-button  background-secondary text-colour-light">Prova gratis per 30 giorni</button>
+                                <p class="buy-now">oppure <a href="#">acquista ora</a></p>
+                            </div>
+
+                            <hr />
+
+                            <section class="card-item__features flow">
+                                <h4>Punti Salienti del piano</h4>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Cartelle offline su dispositivi mobili</p></div>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Servizio assistenza 24/h</p></div>
+                                <div class="flex"><i class="fa-solid fa-check text-colour-secondary"></i><p>Possibilità di personazzazione totale</p></div>
+                            </section>
                         </div>
-
-                        <div class="card-item__call-to-action">
-                            <button class="ui-button"></button>
-                            <p class="buy-now"></p>
-                        </div>
-
-                        <section class="card-item__features">
-                            <h4>Punti Salienti del piano</h4>
-                            <p>Invia file fino a 100 GB con Dropbox Transfer</p>
-                            <p>Cartelle offline su dispositivi mobili</p>
-                        </section>
                     </section>
                     <!-- end Card-item 3 -->
                 </div>
@@ -188,7 +204,7 @@ Logical choice to make things look more organized, but they are not fundamental 
                 <section class="card-item   flow">
                     <div class="card-item__type">Singolo</div>
 
-                    <header class="card-item__header">
+                    <header class="card-item__header flow">
                         <h3 class="subscription-type">Professional</h3>
                         <p class="price-tag"></p>
                         <p class="frequency"></p>
