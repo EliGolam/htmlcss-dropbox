@@ -19,7 +19,7 @@
     --fontweight-heavy: 700;
 
     --fontsize-small: 0.7rem;
-    --fontsize-normal: 1.1rem;
+    --fontsize-normal: 1rem;
     --fontsize-large: 2rem;
     --fontsize-title: 3rem;
 
@@ -73,13 +73,22 @@ footer { padding: 3rem 1rem; }
     font-weight: var(--fontweight-normal);
     cursor: pointer;
 
-    transition: transform 200ms ease-in, border-radius 200ms, opacity 100ms;
+    transition: transform 200ms ease-in, border-radius 200ms, opacity 100ms, background-color 200ms ease-in, color 200ms ease-in;
 }
 
 .ui-button:hover {
-    transform: scale(1.15);
-    border-radius: 6px;
+    transform: scale(1.1);
+    border-radius: 3px;
     opacity: .8;
+}
+
+.navigate-item { 
+    padding: 1.5rem 1rem; 
+    transition: background-color 200ms ease-in;
+}
+
+.navigate-item:hover {
+    background-color: var(--clr-neutral-grey);
 }
 
 .hidden-content { display: none; }
@@ -91,6 +100,11 @@ footer { padding: 3rem 1rem; }
 .flex { display: flex; }
 .flex-column { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
+
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: .5rem;
+}
 
 /* Card-container */
 .card-container {
@@ -134,21 +148,6 @@ footer { padding: 3rem 1rem; }
     column-gap: .5rem;
 }
 
-.page-header .navigate-item { 
-    padding: 1.5rem 1rem; 
-    transition: background-color 200ms ease-in;
-}
-
-.page-header .navigate-item:hover {
-    background-color: var(--clr-neutral-grey);
-}
-
-.page-header a:hover {
-    text-decoration: underline;
-    text-underline-offset: .5rem;
-}
-
-
 /* Main-header */
 .main__header > * { max-width: var(--content-width); margin: 0 auto; }
 
@@ -162,11 +161,43 @@ footer { padding: 3rem 1rem; }
 
 /* Business-plan */
 .business-plan .card-item { 
-    padding: 0 2rem 2rem 2rem;
     border: 2px solid var(--clr-neutral-black);
 }
 
+.business-plan .card-item > * {
+    padding: 0 2rem;
+} 
+
+.business-plan .card-item__type,
+.business-plan .card-item > :last-child {
+    margin-bottom: 1.5rem;
+}
+
+.business-plan .card-item__type {
+    padding: .5rem 0;
+    text-align: center;
+
+    border-bottom: 2px solid var(--clr-neutral-black);
+}
+
+
 /* Business-partner */
+.business-partner {
+    align-items: center;
+    column-gap: 3rem;
+}
+
+#find-business-partner {
+    margin-top: 3rem;
+}
+
+#find-business-partner:hover {
+    transform: scale(1);
+    background-color: var(--clr-secondary);
+    color: var(--clr-neutral-white);
+    border-radius: 0;
+}
+
 .business-partner__img {
     max-width: 65%;
 }

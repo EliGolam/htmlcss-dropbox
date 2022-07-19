@@ -32,3 +32,7 @@
 ## V 0.9.1
 
 - Added page-header CSS styling
+
+## V 0.9.2
+
+- Added CSS utility Classes
