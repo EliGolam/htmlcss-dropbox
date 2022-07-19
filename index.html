@@ -14,7 +14,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome v6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -57,26 +57,32 @@ Logical choice to make things look more organized, but they are not fundamental 
             </div>
         </nav>
     </header>
+    <!-- end HEADER -->
 
+    <!-- MAIN -->
     <main>
-        <header class="main__header background-primary flow">
-            <h2 class="main__header__title">Tutto ciò che ti serve per il lavoro, in un unico posto</h2>
+        <!-- main__header -->
+        <header class="main__header background-primary">
+            <div class="wrapper   content-width flow">
+                <h2 class="main__header__title">Tutto ciò che ti serve per il lavoro, in un unico posto</h2>
             
-            <div class="flex">
-                <section class="main__header__info flow">
-                    <h3 class="hidden-content">Cos'è Dropbox</h3>
-                    <p>Finalmente tutti i tuoi strumenti, contenuti e collaboratori sono accessibili dallo stesso posto. Dropbox Business è più di uno spazio di archiviazione sicuro: è un modo intelligente e integrato per ottimizzare il flusso di lavoro esistente.</p>                
-                    <button class="start-call-to-action ui-button">Inizia la tua prova gratuita</button>
-                    <p>Annulla in qualsiasi momento</p>
-                    <a href="#" class="scroll-down"></a>
-                </section>
-                
-                <img class="main__header__img" src="./assets/img/jumbo.png" alt="Foto esempio di un schermata di Dropbox">
-            </div>    
+                <div class="flex">
+                    <section class="main__header__info">
+                        <h3 class="hidden-content">Cos'è Dropbox</h3>
+                        <p>Finalmente tutti i tuoi strumenti, contenuti e collaboratori sono accessibili dallo stesso posto. Dropbox Business è più di uno spazio di archiviazione sicuro: è un modo intelligente e integrato per ottimizzare il flusso di lavoro esistente.</p>                
+                        <button class="start-call-to-action ui-button background-secondary text-colour-light">Inizia la tua prova gratuita</button>
+                        <p>Annulla in qualsiasi momento</p>
+                        <a href="#business-plan" class="scroll-down icon"></a>
+                    </section>
+                    
+                    <img class="main__header__img" src="./assets/img/jumbo.png" alt="Foto esempio di un schermata di Dropbox">
+                </div>
+            </div>
         </header>
+        <!-- end main__header -->
 
         <!-- Business-plan -->
-        <section class="business-plan   flow content-width">
+        <section id="business-plan" class="flow content-width">
             <h2>Trova il piano business che fa per te</h2>
 
             <form action="">
@@ -218,7 +224,7 @@ Logical choice to make things look more organized, but they are not fundamental 
             <div class="business-partner__info flow">
                 <h2>Entra in contatto con un partner Dropbox</h2>
                 <p>Trova un partner Dropbox e HelloSign di fiducia. Ottieni le soluzioni e i servizi necessari per raggiungere i tuoi obbiettivi aziendali, tra cui implementazione, integrazione, gestione e supporto continui</p>
-                <button id="find-business-partner" class="ui-button">Trova un partner</button>
+                <button id="find-business-partner" class="ui-button blue-hover">Trova un partner</button>
             </div>
         </section>
 

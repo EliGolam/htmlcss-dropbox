@@ -36,3 +36,9 @@
 ## V 0.9.2
 
 - Added CSS utility Classes
+
+## V 0.9.3
+
+- Styling of the main__header completed  
+- Added functional scroll-down button  
+- Positioned wrapper in a way that it exists the header, to create an overhang effect

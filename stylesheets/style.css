@@ -2,7 +2,7 @@
 /* These are some generic design choices for colour schemes, fonts and backgrounds */
 :root {
     /* Website Color Scheme */
-    --clr-primary: rgb(162, 218, 255);
+    --clr-primary: rgb(158, 224, 255);
     --clr-secondary: rgb(0, 97, 255);
 
     --clr-neutral-white: rgb(248, 252, 252);
@@ -10,23 +10,30 @@
     --clr-neutral-black-transparent: rgba(25, 25, 25, .3);
     --clr-neutral-grey: rgb(242, 238, 232);
 
-    --fontfamily-primary: 'Roboto', Arial, Helvetica, sans-serif;
+    --fontfamily-primary: 'Merriweather Sans', Arial, Helvetica, sans-serif;
     --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
     --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
 
-    --fontweight-thin: 200;
+    --fontweight-thin: 300;
     --fontweight-normal: 400;
-    --fontweight-heavy: 700;
+    --fontweight-heavy: 800;
 
     --fontsize-small: 0.7rem;
     --fontsize-normal: 1rem;
     --fontsize-large: 2rem;
-    --fontsize-title: 3rem;
+    --fontsize-title: 4.5rem;
 
     --gap: 1rem;
     --flow-spacer: 1rem;
     --content-width: 1100px;
     --general-gap: .8rem;
+
+    --scroll-padding: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding, 50px);
 }
 
 /* COMPOSITION: Macrolevel design choises that defines the skeleton of the webpage and basic composition within components */
@@ -42,15 +49,14 @@ body { font:  var(--fontweight-normal) var(--fontsize-normal) var(--fontfamily-p
     box-shadow: 0 1px 3px 1px var(--clr-neutral-black-transparent);
 }
 
-main > * { padding: 5rem}
-
-footer { padding: 3rem 1rem; }
-
-/* Component Layout choices */
 .top-navigation-bar {
     justify-content: space-between;
     align-items: center;
 }
+
+main > * { padding: 3rem}
+
+footer { padding: 3rem 1rem; }
 
 /* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
 .icon::before, 
@@ -73,13 +79,16 @@ footer { padding: 3rem 1rem; }
     font-weight: var(--fontweight-normal);
     cursor: pointer;
 
-    transition: transform 200ms ease-in, border-radius 200ms, opacity 100ms, background-color 200ms ease-in, color 200ms ease-in;
+    transition: opacity 100ms, background-color 200ms ease-in, color 200ms ease-in;
 }
 
 .ui-button:hover {
-    transform: scale(1.1);
-    border-radius: 3px;
-    opacity: .8;
+    opacity: .7;
+}
+
+.ui-button.blue-hover:hover {
+    background-color: var(--clr-secondary);
+    color: var(--clr-neutral-white);
 }
 
 .navigate-item { 
@@ -89,6 +98,11 @@ footer { padding: 3rem 1rem; }
 
 .navigate-item:hover {
     background-color: var(--clr-neutral-grey);
+}
+
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: .5rem;
 }
 
 .hidden-content { display: none; }
@@ -101,24 +115,13 @@ footer { padding: 3rem 1rem; }
 .flex-column { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
 
-a:hover {
-    text-decoration: underline;
-    text-underline-offset: .5rem;
-}
-
 /* Card-container */
 .card-container {
     gap: var(--general-gap);
     justify-content: space-between;
 }
-
-.card-container > .flex {
-    gap: var(--general-gap);
-}
-
-.card-item {
-    flex-grow: 1;
-}
+.card-container > .flex { gap: var(--general-gap); }
+.card-item { flex-grow: 1; }
 
 /* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
 .background-light { background-color: var(--clr-neutral-white); }
@@ -148,32 +151,59 @@ a:hover {
     column-gap: .5rem;
 }
 
-/* Main-header */
-.main__header > * { max-width: var(--content-width); margin: 0 auto; }
+/* Main__header */
+.main__header { position: relative; }
+
+.main__header > .wrapper {
+    position: relative;
+        bottom: -130px;
+}
 
 .main__header__title{
+    font-size: var(--fontsize-title);
+    font-weight: var(--fontweight-heavy);
     text-align: center;
+    margin-bottom: 2.5rem;
 }
 
-.main__header__img {
-    max-width: 65%;
+.main__header .flex {
+    position: relative;
+        right: -3rem;
 }
+
+.start-call-to-action { margin: 2rem 0;}
+
+.scroll-down { font-size: var(--fontsize-large);}
+
+.scroll-down::before {
+    content: '\f063';
+    margin-top: 3rem;
+    transition: transform 150ms ease-in, color 100ms ease-in;
+}
+
+.scroll-down:hover::before { transform: scale(1.2); color: var(--clr-neutral-white);}
+
+.main__header__img { max-width: 65%; }
 
 /* Business-plan */
-.business-plan .card-item { 
+#business-plan {
+    margin-top: 7rem;
+}
+
+#business-plan .card-item { 
     border: 2px solid var(--clr-neutral-black);
 }
 
-.business-plan .card-item > * {
+#business-plan .card-item > * {
     padding: 0 2rem;
 } 
 
-.business-plan .card-item__type,
-.business-plan .card-item > :last-child {
+#business-plan .card-item__type,
+#business-plan .card-item > :last-child {
     margin-bottom: 1.5rem;
 }
 
-.business-plan .card-item__type {
+#business-plan .card-item__type {
     padding: .5rem 0;
     text-align: center;
 
@@ -189,13 +219,6 @@ a:hover {
 
 #find-business-partner {
     margin-top: 3rem;
-}
-
-#find-business-partner:hover {
-    transform: scale(1);
-    background-color: var(--clr-secondary);
-    color: var(--clr-neutral-white);
-    border-radius: 0;
 }
 
 .business-partner__img {
