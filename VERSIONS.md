@@ -2,7 +2,7 @@
 
 ## V 0.1
 
-- Added basic HTML boilerplate and CSS reset
+- Added basic HTML boilerplate and CSS reset  
 - Added the assets of the project 
 
 ## V 0.2
@@ -15,12 +15,16 @@
 
 ## V 0.4
 
-- Added business-partner section
-- Added business-features
-- Added business-clients
+- Added business-partner section  
+- Added business-features  
+- Added business-clients  
 
 ## V 0.5
 
-- Added business-call-to-action
-- Added FAQ
-- Added Footer
+- Added business-call-to-action  
+- Added FAQ  
+- Added Footer  
+
+## V 0.6
+
+- Fixed card-item padding issues
