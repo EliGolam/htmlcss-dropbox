@@ -48,3 +48,7 @@
 - Fixed Flow error  
 - Added padding where necessary  
 - Finished layout of business-plan  
+
+## V 0.9.5
+
+- Added SVG
