@@ -513,8 +513,8 @@ li:not([class]) a:hover {
 }
 
 @media screen and (max-width:900px) {
-    .business-plan__options { flex-direction: column; }
-    .business-plan__options > .card-item { width: 100%; }
+    .subscription-plan__options { flex-direction: column; }
+    .subscription-plan__options > .card-item { width: 100%; }
 
     #business-clients > .flex { flex-wrap: wrap; }
     #business-clients .client-section { width: 50%; }
@@ -528,13 +528,15 @@ li:not([class]) a:hover {
     .page-header {
         left: 0;
         width: 25%;
-        height: 100vh;
+        min-height: 100%;
 
         padding-top: 3rem;
     }
 
-    body {
+    main,
+    footer {
         margin-left: 25%;
+        width: 100%;
     }
 
     .page-header .flex { flex-direction: column; }
