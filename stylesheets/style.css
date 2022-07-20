@@ -193,31 +193,29 @@ li:not([class]) a:hover {
     margin-top: 3rem;
 }
 
-
-
 .main__header__img { max-width: 65%; }
 /*#endregion Main__header */
 
 /*#region Business-plan */
-#business-plan { margin-top: 7rem; }
+.subscription-plan { margin-top: 7rem; }
 
-#business-plan h2 { margin-bottom: var(--gap-large, 40px); }
+.subscription-plan__title { margin-bottom: var(--gap-large, 40px); }
 
-#business-plan label {
+.subscription-plan label {
     margin-right: var(--gap-large, 40px);
     font-size: var(--fontsize-medium, 20px);
 }
 
-.business-plan__options > .card-item {
+.subscription-plan__options > .card-item {
     width: calc(100% / 3);
 }
 
-#business-plan .card-item {
+.card-item.plan-offer {
     border: 1px solid var(--clr-neutral-black);
     margin-top: 2rem;
 }
 
-.card-item__type {
+.plan-offer__type {
     margin: 0 auto;
     padding: .6rem;
     text-align: center;
@@ -231,13 +229,13 @@ li:not([class]) a:hover {
 .team-type::before { content: '\f0c0';}
 .agency-type::before, .team-type::before { content: '\f1ad';}
 
-.card-item__content { padding-left: 2rem; padding-right: 2rem;}
+.plan-offer__content { padding-left: 2rem; padding-right: 2rem;}
 
 .subscription-type { font-size: var(--fontsize-large); }
 
 .price-tag {
     font-weight: var(--fontweight-heavy, 600);
-    margin-top: 1rem;
+    margin-top: var(--gap, 15px);
 }
 
 .frequency {
@@ -245,27 +243,25 @@ li:not([class]) a:hover {
     margin-top: .5rem;
 }
 
-/* .number-of-users::before { content: '\f007';}
-.storage-space::before { content: '\f07b';}
-.functionality::before { content: '\f1e0';}  */
+.plan-offer__info { min-height: 200px; }
 
-.card-item__content .flex {
+.plan-offer__info .flex {
     column-gap: .5rem;
     align-items: baseline;
 }
 
-.card-item__call-to-action .ui-button {
+.plan-offer__call-to-action .ui-button {
     width: 100%;
     padding: .7rem;
 }
 
-.card-item__call-to-action a {
+.plan-offer__call-to-action a {
     color: var(--clr-secondary);
     text-decoration: underline;
     text-underline-offset: 3px;
 }
 
-.card-item__content hr {
+.plan-offer__content hr {
     width: 25%;
     border: none;
     height: 1px;
