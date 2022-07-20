@@ -62,3 +62,8 @@
 - Finished review box  
 - Completed FAQ layout  
 - Added internal links
+
+## V 1.0
+
+- Achieved first MVP  
+- Completed page and styling

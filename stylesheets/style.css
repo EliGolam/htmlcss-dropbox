@@ -59,7 +59,10 @@ body { font:  var(--fontweight-normal) var(--fontsize-normal) var(--fontfamily-p
 
 main > * { padding: var(--gap-large, 20px)}
 
-footer { padding: var(--gap-large, 20px) var(--gap, 1rem); }
+footer { 
+    padding: var(--gap-large, 20px) var(--gap, 1rem); 
+    margin-top: 100px;
+}
 
 /* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
 .icon::before, 
@@ -299,8 +302,17 @@ h2 { font-size: var(--fontsize-large); font-weight: var(--fontweight-heavy);}
 }
 
 /* Business-features */
+#business-features .card-container {
+    column-gap: 2rem;
+}
+
 #business-features .card-item {
-    width: calc(100% / 3 - var(--gap));
+    width: calc(100% / 3 - 2rem);
+}
+
+#business-features .card-item > h3, 
+#business-features .card-item > p {
+    text-align: center;
 }
 
 #business-features img { transition: transform 250ms ease-in;}
@@ -411,13 +423,30 @@ h2 { font-size: var(--fontsize-large); font-weight: var(--fontweight-heavy);}
     margin: var(--gap-large) auto;
 }
 
-.faq__element { padding: 50px 0; }
+.faq__element { 
+    padding: var(--gap-large, 50px) 0; 
+    position: relative;
+}
 
 .faq__element:nth-child(even) {
     border-top: 2px solid var(--clr-neutral-black-transparent);
     border-bottom: 2px solid var(--clr-neutral-black-transparent);
 }
 
+.faq__element > summary,
+.faq__element[open] > summary { 
+    list-style-type: ''; 
+    font-weight: var(--fontweight-heavy);
+}
+
+.faq__element > summary::after { content: '\f054'; }
+.faq__element[open] > summary::after { content: '\f078'; }
+
+.faq__element > summary::after, 
+.faq__element[open] > summary::after {
+    position: absolute;
+        right: 0;
+}  
 
 /* FOOTER */
 .page-footer > * { max-width: calc(var(--content-width) + 8rem); margin: 0 auto; }
@@ -425,7 +454,7 @@ h2 { font-size: var(--fontsize-large); font-weight: var(--fontweight-heavy);}
 .page-footer > .card-container {
     justify-content: space-between;
     column-gap: 1rem;
-    row-gap: 7rem;
+    row-gap: 4rem;
 }
 
 .page-footer > .card-container > .card-item {
@@ -436,8 +465,17 @@ h2 { font-size: var(--fontsize-large); font-weight: var(--fontweight-heavy);}
     padding-top: 2.5rem;
     border-top: 2px solid;
 
-    flex-basis: 10ch;
+    flex-basis: 15ch;
     flex-grow: 0;
+}
+
+.current-lang::before { 
+    content: '\f57c'; 
+    margin-right: .5rem;
+}
+.current-lang::after { 
+    content: '\f0d7'; 
+    margin-left: .5rem;
 }
 
 /* EXCEPTIONS: variations to a block */
