@@ -161,15 +161,9 @@ li:not([class]) a:hover {
 /* --------------------------------------------------------------------------------- */
 
 /*#region Page-Header */
-.top-navigation-bar {
-    justify-content: space-between;
-    align-items: center;
-}
-
 .page-header .flex {
     justify-content: space-between;
     align-items: center;
-    /* column-gap: var(--gap-large, 12px); */
 }
 
 .top-navigation-bar > .flex { column-gap: var(--gap-large, 12px); }
