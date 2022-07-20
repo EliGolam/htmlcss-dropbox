@@ -95,6 +95,9 @@
 - Created separate css stylesheet with root properties  
 - Begin the process of cleanup of HTML and CSS  
 
-## 1.4.1
+## 1.5
 
-- Cleaned page-header section code
+CSS & HTML refactoring/cleanup:  
+
+- page-header [Completed]  
+- main__header [completed]

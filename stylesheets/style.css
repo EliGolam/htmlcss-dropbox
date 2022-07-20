@@ -179,7 +179,6 @@ li:not([class]) a:hover {
 .main__header__title{
     font-size: var(--fontsize-title);
     font-weight: var(--fontweight-heavy);
-
     margin-bottom: var(--gap-large, 2.5rem);
 }
 
