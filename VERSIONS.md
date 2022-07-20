@@ -67,3 +67,9 @@
 
 - Achieved first MVP  
 - Completed page and styling
+
+## V 1.1
+
+- Fixed graphical glitches on header  
+- Refined font-sizes  
+- Refined color palettes
