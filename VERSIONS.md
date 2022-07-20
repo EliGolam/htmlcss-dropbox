@@ -85,3 +85,7 @@
 ## V 1.3
 
 - Fixed footer hover effect
+
+## V 1.3.1
+
+- Fixed footer on tighter screen
