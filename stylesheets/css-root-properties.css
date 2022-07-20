@@ -1,0 +1,38 @@
+/* Root pseudoclass custom properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+/* These are some generic design choices for colour schemes, fonts and backgrounds */
+:root {
+    /* Website Color Scheme */
+    --clr-primary: rgb(181, 246, 255);
+    --clr-secondary: rgb(0, 97, 255);
+    --clr-secondary-darker: rgb(8, 23, 83);
+
+    --clr-neutral-white: rgb(248, 252, 252);
+    --clr-neutral-white-transparent: rgba(248, 252, 252, .4);
+    --clr-neutral-black:rgb(6, 20, 36); 
+    --clr-neutral-black-transparent: rgba(5, 16, 28, .3);
+    --clr-neutral-grey: rgb(242, 238, 232);
+
+    --fontfamily-primary: 'Noto Sans', Arial, Helvetica, sans-serif;
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+
+    --fontweight-thin: 300;
+    --fontweight-normal: 400;
+    --fontweight-heavy: 700;
+
+    --fontsize-small: .8rem;
+    --fontsize-default: 1rem;
+    --fontsize-medium: 1.1rem;
+    --fontsize-large: 1.5rem;
+    --fontsize-heading: 3rem;
+    --fontsize-title: 5rem;
+
+    --gap: .8rem;
+    --gap-large: 3rem;
+    --flow-space: 1.5rem;
+    --flow-space-extra: 2.5rem;
+
+    --content-width: 1300px;
+
+    --scroll-padding: 100px;
+}

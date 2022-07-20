@@ -1,57 +1,22 @@
-/* Root pseudoclass custom properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
-/* These are some generic design choices for colour schemes, fonts and backgrounds */
-:root {
-    /* Website Color Scheme */
-    --clr-primary: rgb(181, 246, 255);
-    --clr-secondary: rgb(0, 97, 255);
-    --clr-secondary-darker: rgb(8, 23, 83);
-
-    --clr-neutral-white: rgb(248, 252, 252);
-    --clr-neutral-white-transparent: rgba(248, 252, 252, .4);
-    --clr-neutral-black:rgb(6, 20, 36); 
-    --clr-neutral-black-transparent: rgba(5, 16, 28, .3);
-    --clr-neutral-grey: rgb(242, 238, 232);
-
-    --fontfamily-primary: 'Noto Sans', Arial, Helvetica, sans-serif;
-    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
-    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
-
-    --fontweight-thin: 300;
-    --fontweight-normal: 400;
-    --fontweight-heavy: 700;
-
-    --fontsize-small: .8rem;
-    --fontsize-default: 1rem;
-    --fontsize-medium: 1.1rem;
-    --fontsize-large: 1.5rem;
-    --fontsize-heading: 3rem;
-    --fontsize-title: 5rem;
-
-    --gap: .8rem;
-    --gap-large: 3rem;
-    --flow-space: 1.5rem;
-    --flow-space-extra: 2.5rem;
-
-    --content-width: 1300px;
-
-    --scroll-padding: 100px;
-}
 
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--scroll-padding, 50px);
 }
 
-/* COMPOSITION: Macrolevel design choises that defines the skeleton of the webpage and basic composition within components */
-/* Page Layout choices */
-body { 
-    font:  var(--fontweight-normal) var(--fontsize-default) var(--fontfamily-primary); 
+body {
+    font:  var(--fontweight-normal) var(--fontsize-default) var(--fontfamily-primary);
     color: var(--clr-neutral-black);
     position: relative;
 }
 
+h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal); }
+
+/* --------------------------------------------------------------------------------- */
+/*#region COMPOSITION */
+/* Macrolevel design choises that defines the skeleton of the webpage and basic composition within components */
 .page-header {
-    position: fixed;
+    position: fixed; /* page-header remains at the top of the viewport */
         top: 0;
         z-index: 5;
     width: 100%;
@@ -60,80 +25,85 @@ body {
     box-shadow: 0 1px 3px 1px var(--clr-neutral-black-transparent);
 }
 
-.top-navigation-bar {
-    justify-content: space-between;
-    align-items: center;
-}
+main > * { padding: var(--gap-large, 20px); }
 
-main > * { padding: var(--gap-large, 20px)}
-
-footer { 
-    padding: var(--gap-large, 20px) var(--gap, 1rem); 
+footer {
+    padding: var(--gap-large, 20px) var(--gap, 1rem);
     margin-top: 100px;
 }
+/*#endregion COMPOSITION */
+/* --------------------------------------------------------------------------------- */
 
-/* UTILITIES: One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
-.icon::before, 
-.icon::after { 
+/* --------------------------------------------------------------------------------- */
+/*#region UTILITIES */ 
+/* One job, done well. It performs one logical job: formatting, design, shape, font and element colours  */
+
+/*#ICONS */
+.icon::before,
+.icon::after {
     display: inline-block;
     text-rendering: auto;
-    -webkit-font-smoothing: antialiased;  
+    -webkit-font-smoothing: antialiased;
 
     font: var(--fa-font-solid);
-
-    margin-right: .5rem;
 }
+
+.icon::before { margin-right: .5rem; } /* Gives a little bit of space to avoid the */ 
+.icon::after { margin-left: .5rem; } /* icon being too close to the other elements*/
 
 .social-links > .icon::before,
 .social-links > .icon::after {
     font: var(--fa-font-brands);
 }
 
+.clickable-icon::before,
+.clickable-icon::after {
+    transition:         
+        background-color 200ms ease-in, 
+        color 200ms ease-in,
+        transform 150ms ease-in;
+}
+
+.clickable-icon:hover::before,
+.clickable-icon:hover::after {
+    color: var(--clr-secondary);
+    transform: scale(1.2);
+}
+
+/* ------------------------------------------ */
+
+/* #BUTTONS */
 .ui-button {
-    padding: .4rem 1.3rem;
+    padding: .4rem 1.3rem; /* creates the size of the button*/
     border: transparent;
     font-weight: var(--fontweight-heavy);
     cursor: pointer;
 
-    transition: opacity 100ms, background-color 200ms ease-in, color 200ms ease-in;
+    transition: 
+        opacity 250ms; 
 }
 
 .ui-button:hover {
     opacity: .7;
 }
+/* ------------------------------------------ */
 
-.ui-button.blue-hover:hover {
-    background-color: var(--clr-secondary);
-    color: var(--clr-neutral-white);
-}
-
+/* Anchors and Links */
 li:not([class]) a:hover {
     text-decoration: underline;
     text-underline-offset: 3px;
-}
+} /* Default behaviour for list without classes*/
 
 .navigate-item { padding: 24px 0; }
-.navigate-item a { padding: 20px 0; } 
+.navigate-item a { padding: 20px 0; }
+.navigate-item a:hover { border-bottom: 4px solid var(--clr-secondary); }
+/* ------------------------------------------ */
 
-.navigate-item a:hover {
-    border-bottom: 4px solid var(--clr-secondary);
-}
-
-
-h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
-
-.hidden-content { display: none; }
-
-.content-width { max-width: var(--content-width); margin: 0 auto;}
-
-.flow > * { margin-bottom: var(--flow-space); margin-top: var(--flow-space); }
-.flow-extra > * { margin-bottom: var(--flow-space-extra); margin-top: var(--flow-space-extra);}
-
+/* #FLEX */
 .flex { display: flex; }
 .flex-column { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
 
-/* Card-container */
 .card-container {
     gap: var(--gap);
     justify-content: space-between;
@@ -141,6 +111,18 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 .card-container > .flex { gap: var(--gap); }
 .card-item { flex-grow: 1; }
 
+/* ------------------------------------------ */
+
+/* #AESTHETIC ELEMENTS */
+.hidden-content { display: none; }
+
+.content-width { max-width: var(--content-width); margin: 0 auto;}
+
+.flow > * { margin-bottom: var(--flow-space); margin-top: var(--flow-space); }
+.flow-extra > * { margin-bottom: var(--flow-space-extra); margin-top: var(--flow-space-extra);}
+/* ------------------------------------------ */
+
+/* #COLOR SCHEMES */
 /* Color schemes divided into scalable Design Tokens: allows to apply a specific set of colours without repetition */
 .background-light { background-color: var(--clr-neutral-white); }
 
@@ -167,9 +149,23 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 .bg-hearst { background-color: #b4d0e7;}
 .bg-lonely-planet { background-color: #0d2481;}
 .bg-clear-channel { background-color: #ffd830;}
+/* ------------------------------------------ */
 
+/*#endregion UTILITIES */
+/* --------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------- */
 /* BLOCKS: component specific rules */
-/* Page-Header */
+/* --------------------------------------------------------------------------------- */
+
+/*#region Page-Header */
+.top-navigation-bar {
+    justify-content: space-between;
+    align-items: center;
+}
+
 .page-header .flex {
     justify-content: space-between;
     align-items: center;
@@ -178,8 +174,9 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 
 .top-navigation-bar > .flex { column-gap: var(--gap-large, 12px); }
 .navigate-section { column-gap: 1.5rem; }
+/*#endregion Page-Header */
 
-/* Main__header */
+/*#region Main__header */
 .main__header > .wrapper {
     position: relative;
         bottom: -100px;
@@ -188,7 +185,7 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 .main__header__title{
     font-size: var(--fontsize-title);
     font-weight: var(--fontweight-heavy);
-    /* text-align: center; */
+
     margin-bottom: var(--gap-large, 2.5rem);
 }
 
@@ -201,24 +198,20 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 .scroll-down::before {
     content: '\f063';
     margin-top: 3rem;
-    transition: transform 150ms ease-in, color 100ms ease-in;
 }
 
-.scroll-down:hover::before { 
-    transform: scale(1.2); 
-    color: var(--clr-secondary);
-}
+
 
 .main__header__img { max-width: 65%; }
+/*#endregion Main__header */
 
-
-/* Business-plan */
+/*#region Business-plan */
 #business-plan { margin-top: 7rem; }
 
 #business-plan h2 { margin-bottom: var(--gap-large, 40px); }
 
-#business-plan label { 
-    margin-right: var(--gap-large, 40px); 
+#business-plan label {
+    margin-right: var(--gap-large, 40px);
     font-size: var(--fontsize-medium, 20px);
 }
 
@@ -226,7 +219,7 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
     width: calc(100% / 3);
 }
 
-#business-plan .card-item { 
+#business-plan .card-item {
     border: 1px solid var(--clr-neutral-black);
     margin-top: 2rem;
 }
@@ -292,9 +285,9 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
     justify-content: space-between;
     align-items: flex-start;
 }
+/*#endregion Business-plan */
 
-
-/* Business-partner */
+/*#region Business-partner */
 .business-partner {
     align-items: center;
     column-gap: 3rem;
@@ -314,8 +307,9 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 #find-business-partner:hover {
     color: inherit;
 }
+/*#endregion Business-partner */
 
-/* Business-features */
+/*#region Business-features */
 #business-features .card-container {
     column-gap: 2rem;
 }
@@ -324,15 +318,15 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
     width: calc(100% / 3 - 2rem);
 }
 
-#business-features .card-item > h3, 
-#business-features .card-item > p {
+#business-features {
     text-align: center;
 }
 
-#business-features img { transition: transform 250ms ease-in;}
-#business-features img:hover { transform: scale(1.2); }
+.features__img { transition: transform 250ms ease-in;}
+.features__img:hover { transform: scale(1.2); }
+/*#endregion Business-features */
 
-/* Business-clients */
+/*#region Business-clients */
 #business-discover-clients a {
     text-decoration: underline;
 }
@@ -390,8 +384,8 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
         align-items: center;
 }
 
-.side-section svg { 
-    max-width: 65%; 
+.side-section svg {
+    max-width: 65%;
     fill: var(--clr-neutral-white);
 }
 
@@ -422,8 +416,9 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
     color: var(--clr-neutral-black-transparent);
     background-color: var(--clr-neutral-black-transparent);
 }
+/*#endregion Business-clients */
 
-/* Business-call-to-action */
+/*#region Business-call-to-action */
 .business-call-to-action > .flex {
     justify-content: space-between;
     align-items: center;
@@ -431,21 +426,22 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
     padding: 5rem 0;
 }
 
-.business-call-to-action button { 
-    background-color: white; 
+.business-call-to-action button {
+    background-color: white;
 }
-.business-call-to-action button:hover { 
-    background-color: var(--clr-secondary); 
+.business-call-to-action button:hover {
+    background-color: var(--clr-secondary);
     color: var(--clr-neutral-white);
 }
+/*#endregion Business-call-to-action */
 
-/* FAQ */
+/*#region FAQ */
 .faq__heading {
     margin: var(--gap-large) auto;
 }
 
-.faq__element { 
-    padding: var(--gap-large, 50px) 0; 
+.faq__element {
+    padding: var(--gap-large, 50px) 0;
     position: relative;
 }
 
@@ -455,8 +451,8 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 }
 
 .faq__element > summary,
-.faq__element[open] > summary { 
-    list-style-type: ''; 
+.faq__element[open] > summary {
+    list-style-type: '';
     font-weight: var(--fontweight-heavy);
     cursor: pointer;
 }
@@ -464,15 +460,16 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 .faq__element > summary::after { content: '\f054'; }
 .faq__element[open] > summary::after { content: '\f078'; }
 
-.faq__element > summary::after, 
+.faq__element > summary::after,
 .faq__element[open] > summary::after {
     position: absolute;
         right: 0;
-} 
+}
 
 .faq__element > summary:hover { color: var(--clr-secondary);}
+/*#endregion FAQ */
 
-/* FOOTER */
+/*#region Page-footer */
 .page-footer > * { max-width: calc(var(--content-width) + 8rem); margin: 0 auto; }
 
 .page-footer > .card-container {
@@ -493,24 +490,28 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
     flex-grow: 0;
 }
 
-.current-lang::before { 
-    content: '\f57c'; 
+.current-lang::before {
+    content: '\f57c';
     margin-right: .5rem;
 }
-.current-lang::after { 
-    content: '\f0d7'; 
+.current-lang::after {
+    content: '\f0d7';
     margin-left: .5rem;
 }
+/*#endregion Page-footer */
+/* --------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
 
-/* EXCEPTIONS: variations to a block */
 
-/* MEDIA QUERIES */
+
+/* --------------------------------------------------------------------------------- */
+/*#region MEDIA QUERIES */
 @media only screen and (max-width: 1000px) {
     .main__header__img {display: none;}
 
     .navigate-item { font-size: var(--fontsize-small);}
 
-    .top-navigation-bar > .flex, 
+    .top-navigation-bar > .flex,
     .navigate-section { column-gap: var(--gap, 12px); }
 }
 
@@ -520,14 +521,14 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 
     #business-clients > .flex { flex-wrap: wrap; }
     #business-clients .client-section { width: 50%; }
-    #business-clients .central-section { 
+    #business-clients .central-section {
         order: 1;
         flex-grow: 2;
     }
 }
 
 @media only screen and (max-width: 800px) {
-    .page-header { 
+    .page-header {
         left: 0;
         width: 25%;
         height: 100vh;
@@ -554,3 +555,5 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
     .language-selection { align-self: flex-end; }
 
 }
+/*#endregion MEDIA QUERIES */
+/* --------------------------------------------------------------------------------- */

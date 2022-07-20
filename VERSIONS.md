@@ -89,3 +89,8 @@
 ## V 1.3.1
 
 - Fixed footer on tighter screen
+
+## V 1.4
+
+- Created separate css stylesheet with root properties  
+- Begin the process of cleanup of HTML and CSS  
