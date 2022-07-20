@@ -496,6 +496,10 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 /* EXCEPTIONS: variations to a block */
 
 /* MEDIA QUERIES */
+@media only screen and (max-width: 1000px) {
+    .main__header__img {display: none;}
+}
+
 @media screen and (max-width:900px) {
     .business-plan__options { flex-direction: column; }
     .business-plan__options > .card-item { width: 100%; }
@@ -509,5 +513,8 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 }
 
 @media screen and (max-width:600px) {
+    .business-partner { flex-direction: column; }
+    .business-partner__img { max-width: 100%; }
+
     #business-features .card-item { width: auto;}
 }

@@ -73,3 +73,7 @@
 - Fixed graphical glitches on header  
 - Refined font-sizes  
 - Refined color palettes
+
+## V 1.2 
+
+- Fixed image resizing issue from header and business partner section
