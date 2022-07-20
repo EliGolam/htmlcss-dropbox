@@ -56,3 +56,9 @@
 ## V 0.9.5.1 
 
 - Fixed svg box aspect rations
+
+## V 0.9.6
+
+- Finished review box  
+- Completed FAQ layout  
+- Added internal links
