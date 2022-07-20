@@ -101,4 +101,5 @@ CSS & HTML refactoring/cleanup:
 
 - page-header [Completed]  
 - main__header [completed]  
-- business-plan [Completed]  
+- business-plan [Completed] 
+- business-partner [Completed] 

@@ -80,7 +80,9 @@ footer {
     cursor: pointer;
 
     transition: 
-        opacity 250ms; 
+        opacity 250ms,
+        color 250ms,
+        border-color 200ms;
 }
 
 .ui-button:hover {
@@ -279,22 +281,28 @@ li:not([class]) a:hover {
 /*#region Business-partner */
 .business-partner {
     align-items: center;
-    column-gap: 3rem;
+    column-gap: var(--gap-large, 40px);
 }
 
-.business-partner__img { max-width: 70%;}
+.business-partner__img { 
+    max-width: 70%;
+}
 
-.business-partner__info h2 { font-size: var(--fontsize-large);}
+.business-partner__info h2 { 
+    font-size: var(--fontsize-large); 
+}
 
-#find-business-partner {
+.find-business-partner {
     margin-top: 3rem;
     background-color: transparent;
     padding: .8rem 1.5rem;
     border: 1.5px solid var(--clr-neutral-black);
 }
 
-#find-business-partner:hover {
-    color: inherit;
+.find-business-partner:hover {
+    opacity: 1;
+    color: var(--clr-secondary);
+    border-color: var(--clr-secondary);
 }
 /*#endregion Business-partner */
 
