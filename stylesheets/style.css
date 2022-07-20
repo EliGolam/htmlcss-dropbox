@@ -1,4 +1,3 @@
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--scroll-padding, 50px);
@@ -247,7 +246,8 @@ li:not([class]) a:hover {
 
 .plan-offer__info { min-height: 200px; }
 
-.plan-offer__info .flex {
+.plan-offer__info .flex,
+.plan-offer__features .flex {
     column-gap: .5rem;
     align-items: baseline;
 }
