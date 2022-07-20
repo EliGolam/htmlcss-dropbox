@@ -106,14 +106,18 @@ footer {
     color: var(--clr-neutral-white);
 }
 
+li:not([class]) a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .navigate-item { padding: 24px 0; }
 .navigate-item a { padding: 20px 0; } 
 
-a:hover {
-    /* text-decoration: underline;
-    text-underline-offset: 3px; */
+.navigate-item a:hover {
     border-bottom: 4px solid var(--clr-secondary);
 }
+
 
 h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 
@@ -181,7 +185,7 @@ h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}
 .main__header__title{
     font-size: var(--fontsize-title);
     font-weight: var(--fontweight-heavy);
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: var(--gap-large, 2.5rem);
 }
 

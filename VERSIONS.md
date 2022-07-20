@@ -81,3 +81,7 @@
 ## V 1.2.1
 
 - Modified page-header hover effect
+
+## V 1.3
+
+- Fixed footer hover effect
