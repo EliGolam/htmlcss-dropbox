@@ -54,7 +54,7 @@ body {
         top: 0;
         z-index: 5;
     width: 100%;
-    padding: var(--gap, 1rem) var(--gap, 1rem);
+    padding: 0 var(--gap, 1rem);
     font-weight: var(--fontweight-thin, 300);
     box-shadow: 0 1px 3px 1px var(--clr-neutral-black-transparent);
 }
@@ -106,11 +106,13 @@ footer {
     color: var(--clr-neutral-white);
 }
 
-/* .navigate-item { padding: 1.5rem 1rem; } */
+.navigate-item { padding: 24px 0; }
+.navigate-item a { padding: 20px 0; } 
 
 a:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    /* text-decoration: underline;
+    text-underline-offset: 3px; */
+    border-bottom: 4px solid var(--clr-secondary);
 }
 
 h2 { font-size: var(--fontsize-heading); font-weight: var(--fontweight-normal);}

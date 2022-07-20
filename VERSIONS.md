@@ -77,3 +77,7 @@
 ## V 1.2 
 
 - Fixed image resizing issue from header and business partner section
+
+## V 1.2.1
+
+- Modified page-header hover effect
