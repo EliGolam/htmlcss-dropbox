@@ -52,3 +52,7 @@
 ## V 0.9.5
 
 - Added SVG
+
+## V 0.9.5.1 
+
+- Fixed svg box aspect rations
