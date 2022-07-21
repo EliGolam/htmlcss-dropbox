@@ -414,14 +414,12 @@ li:not([class]) a:hover {
 .business-call-to-action > .flex {
     justify-content: space-between;
     align-items: center;
-
     padding: 5rem 0;
 }
 
-.business-call-to-action button {
-    background-color: white;
-}
-.business-call-to-action button:hover {
+.business-call-to-action .ui-button { background-color: white; }
+
+.business-call-to-action .ui-button:hover {
     background-color: var(--clr-secondary);
     color: var(--clr-neutral-white);
 }

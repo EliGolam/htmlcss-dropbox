@@ -104,3 +104,5 @@ CSS & HTML refactoring/cleanup:
 - business-plan [Completed] 
 - business-partner [Completed] 
 - business-features [Completed]
+- business-clients [Completed]
+- business-call-to-action [Completed]
