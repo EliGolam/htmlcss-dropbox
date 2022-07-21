@@ -433,16 +433,16 @@ li:not([class]) a:hover {
 .faq__element {
     padding: var(--gap-large, 50px) 0;
     position: relative;
+    border-top: 2px solid var(--clr-neutral-black-transparent);
 }
 
-.faq__element:nth-child(even) {
-    border-top: 2px solid var(--clr-neutral-black-transparent);
+.faq__element:last-child { 
     border-bottom: 2px solid var(--clr-neutral-black-transparent);
 }
 
 .faq__element > summary,
 .faq__element[open] > summary {
-    list-style-type: '';
+    list-style-type: ''; /* Remove list default icon */
     font-weight: var(--fontweight-heavy);
     cursor: pointer;
 }
