@@ -95,7 +95,7 @@
 - Created separate css stylesheet with root properties  
 - Begin the process of cleanup of HTML and CSS  
 
-## 1.5
+## V 1.5
 
 CSS & HTML refactoring/cleanup:  
 
@@ -108,3 +108,7 @@ CSS & HTML refactoring/cleanup:
 - business-call-to-action [Completed]  
 - faq [Completed]
 - page-footer [Completed]
+
+## V 2.0
+
+Completed website with minor correction
