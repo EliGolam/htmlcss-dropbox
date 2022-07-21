@@ -324,22 +324,19 @@ li:not([class]) a:hover {
 /*#endregion Business-features */
 
 /*#region Business-clients */
-#business-discover-clients a {
-    text-decoration: underline;
-}
+.discover-clients a { text-decoration: underline; }
 
-#business-clients {
+.client-review {
     width: 100%;
     padding: 0;
     margin: 0;
 }
 
-.client-container { align-items: stretch; }
+.client-review__container { align-items: stretch; }
 
-.client-section {
+.client-review__section {
     width: calc(100% / 3);
     aspect-ratio: 1 / 1;
-
     position: relative;
 }
 
@@ -348,25 +345,7 @@ li:not([class]) a:hover {
     aspect-ratio: 1 / 1;
     height: 0;
     overflow: hidden; /* The svg is being pushed down*/
-
     position: relative; /* To move the svg back in the box */
-}
-
-.side-section > .client-item {
-    width: calc(100% / 2);
-    padding-top: calc(100% / 2); /* Forcing their height to be the same as their width*/
-    cursor: pointer;
-    transition: outline 300ms cubic-bezier(.23,1,.32,1);
-}
-
-.side-section > .client-item:hover {
-    outline: 10px solid var(--clr-neutral-white-transparent);
-    outline-offset: -10px;
-}
-
-.central-section > .client-item {
-    width: 100%;
-    padding-top: 100%; /* Forcing their height to be the same as their width*/
 }
 
 .client-item .svg-wrapper {
@@ -381,15 +360,32 @@ li:not([class]) a:hover {
         align-items: center;
 }
 
+
+.side-section > .client-item {
+    width: calc(100% / 2);
+    padding-top: calc(100% / 2); /* Forcing their height to be the same as their width*/
+    cursor: pointer;
+    transition: outline 300ms cubic-bezier(.23,1,.32,1);
+}
+
+.side-section > .client-item:hover {
+    outline: 10px solid var(--clr-neutral-white-transparent);
+    outline-offset: -10px;
+}
+
 .side-section svg {
     max-width: 65%;
     fill: var(--clr-neutral-white);
 }
 
+.central-section > .client-item {
+    width: 100%;
+    padding-top: 100%; /* Forcing their height to be the same as their width*/
+}
+
 .central-section svg {
     max-width: 50%;
     fill: var(--clr-neutral-black);
-
     margin-top: 0;
 }
 
@@ -398,11 +394,10 @@ li:not([class]) a:hover {
     justify-content: center;
 
     padding: 1.5rem;
-
     overflow-y: auto;
 }
 
-.central-section .svg-wrapper > .flex {
+.central-section .flex {
     max-width: 55ch;
 }
 
@@ -516,9 +511,9 @@ li:not([class]) a:hover {
     .subscription-plan__options { flex-direction: column; }
     .subscription-plan__options > .card-item { width: 100%; }
 
-    #business-clients > .flex { flex-wrap: wrap; }
-    #business-clients .client-section { width: 50%; }
-    #business-clients .central-section {
+    .client-review > .flex { flex-wrap: wrap; }
+    .client-review .client-section { width: 50%; }
+    .client-review .central-section {
         order: 1;
         flex-grow: 2;
     }
