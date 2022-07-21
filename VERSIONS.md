@@ -107,3 +107,4 @@ CSS & HTML refactoring/cleanup:
 - business-clients [Completed]  
 - business-call-to-action [Completed]  
 - faq [Completed]
+- page-footer [Completed]
