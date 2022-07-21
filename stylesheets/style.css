@@ -192,6 +192,12 @@ li:not([class]) a:hover {
 .scroll-down::before {
     content: '\f063';
     margin-top: 3rem;
+    transition:
+        transform 600ms cubic-bezier(.7,-0.96,.38,2.16);
+}
+
+.scroll-down:hover:before {
+    transform: translateY(20px);
 }
 
 .main__header__img { max-width: 65%; }
@@ -307,17 +313,11 @@ li:not([class]) a:hover {
 /*#endregion Business-partner */
 
 /*#region Business-features */
-#business-features .card-container {
-    column-gap: 2rem;
-}
+.dropbox-features { text-align: center; }
 
-#business-features .card-item {
-    width: calc(100% / 3 - 2rem);
-}
+.dropbox-features .card-container { column-gap: 2rem; }
 
-#business-features {
-    text-align: center;
-}
+.dropbox-features .card-item { width: calc(100% / 3 - 2rem); }
 
 .features__img { transition: transform 250ms ease-in;}
 .features__img:hover { transform: scale(1.2); }
@@ -544,7 +544,7 @@ li:not([class]) a:hover {
     .business-partner { flex-direction: column; }
     .business-partner__img { max-width: 100%; }
 
-    #business-features .card-item { width: auto;}
+    .dropbox-features .card-item { width: auto;}
 
     .page-footer > .card-container { row-gap: var(--gap);}
     .page-footer > .card-container > .card-item {
